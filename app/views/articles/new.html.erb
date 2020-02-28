@@ -1,0 +1,32 @@
+
+<%= render 'nav' %>
+
+<div class="container">
+<%= link_to "Back", articles_path ,class: "btn btn-info mt-2" %>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>New Article</h2>    
+        </div>
+        <div class="card-body">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <%= form_with(model: @article, local: true) do |f|  %>
+                    <p>
+                        <b><%= f.label :title  %></b>
+                        <%= f.text_field :title, class: "form-control" %>
+                    </p>
+                    <p>
+                        <b><%= f.label :body %></b>
+                        <%= f.text_area :body, class: "form-control" %>
+                    </p>
+                    <p>
+                         <%= f.submit class: "btn btn-primary" %>    
+                    </p>
+                    <% end  %>
+            </div>
+        </div>
+        </div>
+            
+        
+    </div>
+</div>
